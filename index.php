@@ -1,6 +1,7 @@
 <?php
 
 class Mobil {
+ 
 
     // property
 public $merek;
@@ -22,7 +23,8 @@ public function cek($nama, $ket)
     echo 'Tahun :' . $this->tahun.'<br>';
     echo 'Warna :' . $this->warna.'<br>';
     echo 'Pemilik :' . $nama.'<br>';
-    echo 'Pemilik :' . $ket.'<br>';
+    echo 'Keterangan :' . $ket.'<br>';
+    echo '<br>';
 }
 
 
@@ -34,9 +36,17 @@ public function stop ()
 
 }
 
+class Kendaraan extends Mobil {
+    public $jenis;
+    public function bergerak()
+    {
+        echo 'kendaraan sedang bergerak';
+    }
+}
 // object
 
 $mobil = new Mobil();
+$kendaraan = new Kendaraan();
 $mobil->merek = 'Avanza';
 $mobil->model = 'Nova';
 $mobil->tahun = 2023;
@@ -46,3 +56,8 @@ $mobil->warna = 'Kuning';
 $ket='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam ratione, sequi aspernatur accusamus reiciendis, adipisci obcaecati maxime ut odit rem dignissimos hic nemo, asperiores architecto laborum eveniet quam facilis natus.';
 
 $mobil->cek('Doni',$ket);
+$kendaraan->merk = 'BWM';
+$mobil->model = 'Nova';
+$mobil->tahun = 2023;
+$mobil->warna = 'Kuning';
+$kendaraan->cek('Doni','');
